@@ -15,13 +15,19 @@ export interface WishlistItem extends Product {
 const storageKey = "wishlist";
 
 const state = proxy<IStore>(
-  JSON.parse(localStorage.getItem(storageKey) as string) || {
+  JSON.parse(
+    typeof window !== "undefined"
+      ? (window.localStorage.getItem(storageKey) as string)
+      : `{"wishlist":[]}`
+  ) || {
     wishlist: [],
   }
 );
 
 subscribe(state, () => {
-  localStorage.setItem(storageKey, JSON.stringify(state));
+  typeof window !== "undefined"
+    ? window.localStorage.setItem(storageKey, JSON.stringify(state))
+    : [];
 });
 
 // const state = proxy<IStore>(

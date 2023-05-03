@@ -53,7 +53,7 @@ export default async function Products() {
           Our finest T-shirts
         </h1>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 bg-slate-200 p-4 rounded-md">
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 bg-slate-200 dark:bg-slate-800 p-4 rounded-md">
           {products.map((product) => (
             <div key={product.id} className="">
               <div className="relative">

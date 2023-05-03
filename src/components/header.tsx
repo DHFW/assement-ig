@@ -1,5 +1,7 @@
 import NavBarLink from "./navbar-link";
-import WhishList from "./whishlist";
+import dynamic from "next/dynamic";
+
+const Wishlist = dynamic(() => import("./whishlist"), { ssr: false });
 
 const Header = () => {
   return (
@@ -26,7 +28,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="dark:text-slate-100">
-            <WhishList />
+            <Wishlist />
           </div>
         </div>
       </div>

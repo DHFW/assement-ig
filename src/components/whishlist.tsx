@@ -35,7 +35,7 @@ const WhishList: React.FC<WhishListProps> = (props) => {
           size={32}
           className="stroke-slate-300 hover:stroke-slate-400 dark:hover:stroke-white  transition-colors"
         ></Icon>
-        {store.wishlist.length > 0 && (
+        {store.wishlist && store.wishlist.length > 0 && (
           <span className="text-sm text-white absolute -top-1 -right-1 bg-green-500 rounded-full px-1.5">
             {store.wishlist
               .map((wi) => wi.nrOfItems)
@@ -74,7 +74,7 @@ const WhishList: React.FC<WhishListProps> = (props) => {
             {store.wishlist.map((wi) => (
               <div
                 key={wi.id}
-                className="flex flex-col w-full gap-2 items-center bg-slate-200 p-4 rounded-md"
+                className="flex flex-col w-full gap-2 items-center bg-slate-200 dark:bg-slate-800 p-4 rounded-md"
               >
                 <div className={`flex flex-col`}>
                   <div>{wi.name}</div>
