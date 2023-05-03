@@ -31,6 +31,7 @@ const ToggleWishlistButton: React.FC<ToggleWishlistButtonProps> = (props) => {
       onClick={() => handleFavoriteProduct(props.product)}
       className="border border-white p-2 rounded-full"
       data-testid="heart"
+      aria-label="Add to wishlist"
     >
       <Icon
         imageName="heart"

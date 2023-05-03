@@ -47,7 +47,7 @@ const SlideOutModal: React.FC<SlideOutModalProps> = ({
               >
                 <HeadlessDialog.Panel
                   role="modal"
-                  className={`pointer-events-auto relative w-screen max-w-[300px] h-screen bg-white dark:bg-slate-900 text-left shadow-xl flex `}
+                  className={`pointer-events-auto relative w-screen max-w-[300px] h-screen bg-white dark:bg-slate-900 text-left shadow-xl flex overflow-auto `}
                 >
                   <div className="flex flex-col w-full p-6">{children}</div>
                 </HeadlessDialog.Panel>

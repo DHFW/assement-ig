@@ -28,11 +28,12 @@ const WhishList: React.FC<WhishListProps> = (props) => {
         onClick={() => setWishlistOpen(true)}
         className="relative"
         data-testid="favorites"
+        aria-label="Show wishlist"
       >
         <Icon
           imageName={"heart"}
           size={32}
-          className="stroke-slate-300 hover:stroke-white transition-colors"
+          className="stroke-slate-300 hover:stroke-slate-400 dark:hover:stroke-white  transition-colors"
         ></Icon>
         {store.wishlist.length > 0 && (
           <span className="text-sm text-white absolute -top-1 -right-1 bg-green-500 rounded-full px-1.5">
@@ -69,7 +70,7 @@ const WhishList: React.FC<WhishListProps> = (props) => {
             </div>
           )}
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 mb-4">
             {store.wishlist.map((wi) => (
               <div
                 key={wi.id}
@@ -89,8 +90,7 @@ const WhishList: React.FC<WhishListProps> = (props) => {
                 <form className="flex gap-2">
                   <button
                     data-testid="delete"
-                    role="delete"
-                    className=""
+                    aria-label="Delete from wishlist"
                     onClick={() => handleUpdateNrOfItems(wi, 0)}
                   >
                     <Icon imageName="trash" size={32} />
